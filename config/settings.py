@@ -52,6 +52,11 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'django_celery_beat',
     'django_celery_results',
+
+    'rest_framework',
+    'rest_framework.authtoken',
+    'rest_auth',
+    'rest_auth.registration',
 ]
 
 SITE_ID = 1
@@ -155,6 +160,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+LOGIN_REDIRECT_URL = 'core:list_urls'
 
 # Email configuration
 EMAIL_BACKEND = os.environ.get(
@@ -168,3 +174,10 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 # Celery configs
 CELERY_RESULT_BACKEND = "django-db"
 CELERY_ACCEPT_CONTENT = ['json', 'pickle']
+
+# REST Framework
+REST_FRAMEWORK = {
+    'default_permission_classes': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}
