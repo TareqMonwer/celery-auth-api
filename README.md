@@ -2,6 +2,7 @@
 + clone the repo and `cd` into the codebase.
 + create and activate virtual-environment
 + install dependencies using `pip install -r requirements.txt`
++ create `.env` file & provide information as shown in `.env.example`
 + run `python manage.py makemigrations` if needed.
 + run `python manage.py migrate`
 + start redis-server using `redis-server` from the root directory of the project.
