@@ -172,8 +172,10 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
 # Celery configs
-CELERY_RESULT_BACKEND = "django-db"
+# CELERY_RESULT_BACKEND = 'django-db'
+CELERY_RESULT_BACKEND = 'redis://localhost:6360/0'
 CELERY_ACCEPT_CONTENT = ['json', 'pickle']
+CELERY_BROKER_URL = 'redis://localhost:6360/0'
 
 # REST Framework
 REST_FRAMEWORK = {
